@@ -1,6 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
@@ -9,20 +7,13 @@
     android:paddingRight="40dp">
 
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_people_black_24dp"
-        tools:ignore="VectorDrawableCompat" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:fontFamily="@font/roboto_slab"
-        android:text="LOGIN"
+        android:text="LOG IN"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30dp" />
@@ -73,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/colorPrimary"
-            android:text="Login"
+            android:text="Log in"
             android:textColor="#FFFFFF" />
 
     </LinearLayout>

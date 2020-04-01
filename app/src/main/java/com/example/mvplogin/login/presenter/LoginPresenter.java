@@ -14,7 +14,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class LoginPresenter implements ILoginPresenter {
     private String token;
-    public static String BASE_URL = "https://1917ca75.ngrok.io/api/v1/";
+    public static String BASE_URL = "https://ed653231.ngrok.io/api/v1/";
     AsyncHttpClient client = new AsyncHttpClient();
     ILoginView iLoginView;
     IUser iUser;
@@ -34,18 +34,18 @@ public class LoginPresenter implements ILoginPresenter {
         params.put("username", name);
         params.put("password", password);
 
-        client.post(BASE_URL + "login", params, new AsyncHttpResponseHandler() {
+        client.post(BASE_URL + "login/", params, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 String str = new String(responseBody);
                 try {
                     JSONObject json = new JSONObject(str);
                     token = (String) json.get("token");
-                    Boolean isLoginSuccess = true;
-                    final int code = iUser.checkUserValidity(name, password);
-                    if (code != 0) isLoginSuccess = false;
-                    final Boolean result = isLoginSuccess;
-                    iLoginView.onLoginResult(result, -1, token);
+//                    Boolean isLoginSuccess = true;
+//                    final int code = iUser.checkUserValidity(name, password);
+//                    if (code != 0) isLoginSuccess = false;
+//                    final Boolean result = isLoginSuccess;
+                    iLoginView.onLoginResult(true, -1, token);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
